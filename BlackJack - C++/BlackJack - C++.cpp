@@ -2,7 +2,7 @@
 #include <string>
 using namespace std;
 
-    Cards[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+    int Cards[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
     // string Suit[] = {"Spades", "Clubs", "Diamonds", "Hearts"};
     int Suit[] = { 1, 2, 3, 4 };
     int randomNum;
@@ -76,4 +76,3 @@ int main() {
 
     
 }
-int 
