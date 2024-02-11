@@ -8,18 +8,18 @@ int Spades[] = { 0, 0, 0, 0, 0 , 0, 0, 0, 0, 0, 0, 0, 0 };
 int Clubs[] = { 0, 0, 0, 0, 0 , 0, 0, 0, 0, 0, 0, 0, 0 };
 int Diamonds[] = { 0, 0, 0, 0, 0 , 0, 0, 0, 0, 0, 0, 0, 0 };
 int Hearts[] = { 0, 0, 0, 0, 0 , 0, 0, 0, 0, 0, 0, 0, 0 };
-int randomNum;
+
 int DeckValue = 0;
 int DeckCroupierValue = 0;
 int AsValue;
 int CardValue;
 
 int SuitNum; int CardNum;
-bool itsAnAs;
+
 
 int Card;
 string decision;
-string Turn;
+
 
 void IntroGame() {
 
@@ -149,28 +149,54 @@ void youWin() {
 
 
 
-
+void ReadCard() {
+    
+    if (Cards[CardNum] == 1)
+    {
+        cout << "A";
+    }
+    else if (Cards[CardNum] == 11)
+    {
+        cout << "J";
+    }
+    else if (Cards[CardNum] == 12)
+    {
+        cout << "Q";
+    }
+    else if (Cards[CardNum] == 13)
+    {
+        cout << "K";
+    }
+    else
+    {
+        cout << Cards[CardNum];
+    }
+    cout << " Of " << Suit[SuitNum] << "\n";
+}
 
 
 int main() {
     srand(time(NULL));
     IntroGame();
 
-    //your card
+ 
 
     CardAction();
-    cout << "Your card is " << Cards[CardNum] << " Of " << Suit[SuitNum] << "\n";
+    cout << "Your card is ";
+    ReadCard(); 
+    
     CardCount(Card, "Player");
 
     CardAction();
-    cout << "And your second card is " << Cards[CardNum] << " Of " << Suit[SuitNum] << "\n";
+    cout << "And your second card is ";
+    ReadCard();
     cout << "You deck has a total of " << CardCount(Card, "Player") << " points.\n";
-    Turn = "Croupier";
+    
     CardAction();
-    cout << "The croupier's card is " << Cards[CardNum] << " of " << Suit[SuitNum] << "\n";
+    cout << "The croupier's card is ";
+    ReadCard();
     cout << "Croupier has a total of " << CardCount(Card, "Croupier") << " points.\n";
-    Turn = "Player";
-    //croupier card
+    
     cout << "===================================================================================================================== \n";
 
 
@@ -182,7 +208,8 @@ int main() {
         if (decision == "y")
         {
             CardAction();
-            cout << "Your card is " << Cards[CardNum] << " Of " << Suit[SuitNum] << "\n";
+            cout << "Your card is ";
+            ReadCard();
             cout << "Your deck has a total of " << CardCount(Card, "Player") << " points.\n";
 
 
@@ -193,7 +220,8 @@ int main() {
             while (DeckCroupierValue < DeckValue || DeckCroupierValue < 17)
             {
                 CardAction();
-                cout << "The croupier's card is " << Cards[CardNum] << " of " << Suit[SuitNum] << "\n";
+                cout << "The croupier's card is ";
+                ReadCard(); 
                 cout << "Croupier has a total of " << CardCount(Card, "Croupier") << " points.\n";
 
             }
