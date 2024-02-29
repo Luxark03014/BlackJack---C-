@@ -32,8 +32,8 @@ int CardAction() {
     while (!CardSelected)
     {
         CardSelected = false;
-        SuitNum = rand() % 3;
-        CardNum = rand() % 12;
+        SuitNum = rand() % 4;
+        CardNum = rand() % 13;
         if (SuitNum == 0 && Spades[CardNum] == 0)
         {
 
